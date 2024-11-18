@@ -90,18 +90,23 @@ Scalable and Maintainable:
 All models adapt dynamically to their target environment.
 
 ### Benefits of This Approach
+
 **`1. Simplified Execution`**:
 A single dbt run command per environment builds all models dynamically.
 No need for external scripts or manual intervention.
+
 **`2. Enhanced Maintainability`**:
 Shared logic is centralized in the shared/ folder, avoiding redundancy.
 Models and configurations are organized logically into reports/ and shared/.
+
 **`3. Dynamic and Flexible Configuration`**:
 Targets (prod, preprod) dynamically adjust the schema, filtering logic, or behavior using:
 {{ target.name }}
 env_var() for environment variables.
+
 **`4. Security`**:
 Sensitive environment-specific details (e.g., API keys, service accounts) are stored securely in profiles.yml outside the project folder.
+
 **`5. Scalability`**:
 Easily extendable for additional environments or models.
 Supports complex requirements while maintaining a clean, unified structure.

@@ -47,25 +47,6 @@ unified_dbt_project/
 
 ## How to Run
 
-### Setup
-Ensure `profiles.yml` is located at `~/.dbt/profiles.yml`. Example content:
-```yaml
-unified_project:
-  target: preprod
-  outputs:
-    preprod:
-      type: bigquery
-      method: service-account
-      project: my-preprod-project
-      dataset: preprod_dataset
-      keyfile: ~/.gcp/preprod-key.json
-    prod:
-      type: bigquery
-      method: service-account
-      project: my-prod-project
-      dataset: prod_dataset
-      keyfile: ~/.gcp/prod-key.json
-```
 ### Execution
 Run all models for a specific environment using a single command:
    - For preprod:

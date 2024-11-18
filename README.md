@@ -3,7 +3,7 @@
 ## Overview
 This project consolidates DBT models into a single structure, simplifying execution and management for multiple environments (e.g., `prod`, `preprod`). It eliminates inefficiencies and provides a scalable solution for model management.
 
-## Folder Structure
+Folder Structure
 graphql
 
 unified_dbt_project/

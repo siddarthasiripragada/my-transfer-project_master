@@ -1,21 +1,29 @@
-# README
+# Unified DBT Project
 
-This is sample dbt repo for interview purpose
+## Overview
+This project consolidates DBT models into a single structure, with dynamic execution based on the target environment (`prod` or `preprod`).
 
-Please provide answers for these following questions:
-* What are each of the files for?
-* How to run this project and what results we expect.
+## File Explanations
+1. **`dbt_project.yml`**:
+   - Defines project settings and dynamically enables models based on the environment.
 
-List some of this solution's design problems and compare to dbt projects best practices.
+2. **`manifest.yml`**:
+   - Includes metadata for environment-specific settings.
 
-This project runs every model as a separated dbt project which is inefficient.
+3. **`models/`**:
+   - `reports/`: Contains SQL models for both `prod` and `preprod`.
+   - `shared/`: Contains reusable SQL logic and shared configurations.
 
-Provide an alternative solution to put everything in one single dbt project that can handle all the environments(targets) and all models.
+## How to Run
+1. Set up the profiles file (`~/.dbt/profiles.yml`).
+2. Execute:
+   - For preprod:
+     ```bash
+     dbt run --target preprod
+     ```
+   - For prod:
+     ```bash
+     dbt run --target prod
+     ```
 
-Requirements:
-* because preprod and prod have different models, your solution should be able to handle different models based on the environment
-* we only need to run one 'dbt run' per environment to build all models for that environment
-* get rid of the dbt_command_loop.sh, preprod_table_config.yml and table_config.yml and provide a much simpler and cleaner solution
-
-Provide a new repo containing the new solution's code.  
-Provide your analysis and suggestions if there are many ways to achieve the same results.
+3. The models will dynamically apply environment-specific configurations.

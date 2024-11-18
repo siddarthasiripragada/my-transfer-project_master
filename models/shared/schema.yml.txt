@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: dataset_name
+    database: "{{ env_var('DBT_SRC_GCP_PROJECT') }}"
+    schema: "{{ env_var('DBT_SRC_GCP_DATASET') }}"
+    tables:
+      - name: table_name
+        identifier: "{{ env_var('DBT_SRC_TABLE_NAME') }}"
